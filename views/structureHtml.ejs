@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Bootstrap Example</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+	
+	
+</head>
+
+<style>
+html, body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  display: table;
+  margin: 0;
+}
+#top, #bottom {
+  width: 100%;
+  background: yellow;
+  display: table-row;
+}
+#top {
+  height: 50px;
+}
+#bottom {
+  background: lightgrey;
+  height: 100%;
+}
+</style>
+
+<body>
+
+	<div id="alertDiv"></div>
+
+	<div style="background-color: #36454f; color: white">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center"> <img src="../logo.png"> </div>
+			</div>
+			<div class="row">
+				<div class="col text-center"> Reference: <a style="color:white" href=https://strengthlevel.com/strength-standards>https://strengthlevel.com/strength-standards</a> </div>
+			</div>
+
+			<br>
+			<br>
+			<div class="row">
+				<div class="col-12">
+					<form>
+						<div class="form-row">
+							<div class="col">
+								<label>Gender</label>
+							</div>
+							<div class="col">
+								<label>Body Weight</label>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-12">
+					<form>
+						<div class="form-row">
+							<div class="col">
+								<select class="form-control" id="gender">
+									<option value="0">men</option>
+									<option value="1">women</option>
+								</select>
+							</div>
+							<div class="col">
+								<select class="abc form-control" id="bodyweight">
+								</select>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<div class="col-12">
+					<form>
+						<div class="form-row">
+							<div class="col">
+								<label>Lift</label>
+							</div>
+							<div class="col">
+								<label>Weight</label>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-12">
+					<form id="selectForm"></form>
+					<button type="button" id="btn1" class="btn btn-primary">Add</button>
+					<button type="button" id="btn2" class="btn btn-danger">Remove</button>
+					<button type="button" id="btn3" class="btn btn-success">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<canvas id="marksChart"></canvas>  
+			</div>
+		</div>
+	</div>
+
+
+	<br>
+	<br>
+
+	<div style="background-color: #36454f; color: white; font-size: large;" id="bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<p class="text-center" id="avg"></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-3">Below average lifts</div>
+				<div class="col-3"><i class="fa fa-chevron-up"></i></div>
+				<div class="col-3">Above average lifts</div>
+				<div class="col-3"><i class="fa fa-chevron-down"></i></div>
+			</div>
+			<div class="row">
+				<div id="avgLow1" class="col-3"></div>
+				<div id="avgLow2" class="col-3"></div>
+				<div id="avgHigh1" class="col-3"></div>
+				<div id="avgHigh2" class="col-3"></div>
+			</div>
+		</div>
+	</div>
+
+
+<script src="<%=jsfile%>"> </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
