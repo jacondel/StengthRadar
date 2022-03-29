@@ -13,7 +13,7 @@ app.set('view engine', 'ejs')
 
 
 //db-----------------------
-connectionString = 'mongodb+srv://jake1:install4@cluster0.djq8r.mongodb.net/admin?retryWrites=true&w=majority'
+connectionString = 'mongodb+srv://jake1:notinstall4password@cluster0.djq8r.mongodb.net/admin?retryWrites=true&w=majority'
 
 
 var db
